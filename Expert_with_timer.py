@@ -75,9 +75,9 @@ def kekich(lol1, lol2):
 
 a = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
 i = 0
-pos_face = pyautogui.locateOnScreen('C:\КЕКЛОЛ\кек.png')
+pos_face = pyautogui.locateOnScreen('C:\mbot\Lico.png')
 # запоминает положения всех клеток
-for pos in pyautogui.locateAllOnScreen('C:\КЕКЛОЛ\Без имени.png'):
+for pos in pyautogui.locateAllOnScreen('C:\mbot\Kletka.png'):
     a[i // 30].append(pos)
     i += 1
 while keyboard.is_pressed('q') == False:

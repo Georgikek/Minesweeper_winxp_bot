@@ -42,8 +42,8 @@ def xyi():  # парсит
 
 a = [[], [], [], [], [], [], [], [], []]
 i = 0
-pos_face = pyautogui.locateOnScreen('C:\КЕКЛОЛ\кек.png')
-for pos in pyautogui.locateAllOnScreen('C:\КЕКЛОЛ\Без имени.png'):  # запоминает положения всех клеток
+pos_face = pyautogui.locateOnScreen('C:\mbot\Lico.png')
+for pos in pyautogui.locateAllOnScreen('C:\mbot\Kletka.png'):  # запоминает положения всех клеток
     a[i // 9].append(pos)
     i += 1
 while keyboard.is_pressed('q') == False:
