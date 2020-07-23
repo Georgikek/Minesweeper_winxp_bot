@@ -40,14 +40,15 @@ def xyi():  # парсит
     return
 
 
+a = [[], [], [], [], [], [], [], [], []]
+i = 0
+pos_face = pyautogui.locateOnScreen('C:\КЕКЛОЛ\кек.png')
+for pos in pyautogui.locateAllOnScreen('C:\КЕКЛОЛ\Без имени.png'):  # запоминает положения всех клеток
+    a[i // 9].append(pos)
+    i += 1
 while keyboard.is_pressed('q') == False:
-    a = [[], [], [], [], [], [], [], [], []]
-    i = 0
     r = True
     b = [[0 for c in range(9)] for m in range(9)]
-    for pos in pyautogui.locateAllOnScreen('C:\КЕКЛОЛ\Без имени.png'):  # запоминает положения всех клеток
-        a[i // 9].append(pos)
-        i += 1
     i = random.randint(0, 8)
     click(x=a[i][i][0] + 9, y=a[i][i][1] + 9)
     click(x=a[i][i][0] + 9, y=a[i][i][1] + 9)
@@ -256,9 +257,7 @@ while keyboard.is_pressed('q') == False:
                     time.sleep(0.1)
                     xyi()
                     break
-        r = not pyautogui.pixelMatchesColor(a[0][4][0] + 1, a[0][4][1] - 27,
-                                            (0, 0, 0)) and not pyautogui.pixelMatchesColor(
-            a[0][4][0] + 4, a[0][4][1] - 23, (0, 0, 0))
-    if pyautogui.pixelMatchesColor(a[0][4][0] + 1, a[0][4][1] - 27, (0, 0, 0)):
+        r = not pyautogui.pixelMatchesColor(pos_face[0] + 9, pos_face[1] + 17, (0, 0, 0)) and not pyautogui.pixelMatchesColor(pos_face[0] + 7, pos_face[1] + 12, (0, 0, 0))
+    if pyautogui.pixelMatchesColor(pos_face[0] + 7, pos_face[1] + 12, (0, 0, 0)):
         print(time.time() - timee)
-    click(a[0][4][0] + 1, a[0][4][1] - 27)
+    click(pos_face[0] + 10, pos_face[1] + 18)
