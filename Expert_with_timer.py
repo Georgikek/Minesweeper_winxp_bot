@@ -25,26 +25,25 @@ def xyi():
     pic = pyautogui.screenshot(region=(a[0][0][0], a[0][0][1], 480, 256))
     for inc3 in range(16):
         for inc4 in range(30):
-            red1, green1, blue1 = pic.getpixel((inc4 * 16 + 9, inc3 * 16 + 9))
-            red2, green2, blue2 = pic.getpixel((inc4 * 16 + 8, inc3 * 16 + 8))
-            red3, green3, blue3 = pic.getpixel((inc4 * 16 + 1, inc3 * 16 + 1))
-            if (red1, green1, blue1) == (0, 0, 255):
-                b[inc3][inc4] = 1
-            elif (red2, green2, blue2) == (0, 128, 0):
-                b[inc3][inc4] = 2
-            elif (red2, green2, blue2) == (255, 0, 0):
-                b[inc3][inc4] = 3
-            elif (red2, green2, blue2) == (0, 0, 128):
-                b[inc3][inc4] = 4
-            elif (red2, green2, blue2) == (128, 0, 0):
-                b[inc3][inc4] = 5
-            elif (red2, green2, blue2) == (0, 128, 128):
-                b[inc3][inc4] = 6
-            elif (red2, green2, blue2) == (0, 0, 0):
-                b[inc3][inc4] = -1
-            elif (red3, green3, blue3) == (192, 192, 192):
-                b[inc3][inc4] = -2
-    return
+            if b[inc3][inc4] == 0:
+                red1, green1, blue1 = pic.getpixel((inc4 * 16 + 9, inc3 * 16 + 9))
+                red2, green2, blue2 = pic.getpixel((inc4 * 16 + 8, inc3 * 16 + 8))
+                red3, green3, blue3 = pic.getpixel((inc4 * 16 + 1, inc3 * 16 + 1))
+                if (red1, green1, blue1) == (0, 0, 255):
+                    b[inc3][inc4] = 1
+                elif (red2, green2, blue2) == (0, 128, 0):
+                    b[inc3][inc4] = 2
+                elif (red2, green2, blue2) == (255, 0, 0):
+                    b[inc3][inc4] = 3
+                elif (red2, green2, blue2) == (0, 0, 128):
+                    b[inc3][inc4] = 4
+                elif (red2, green2, blue2) == (128, 0, 0):
+                    b[inc3][inc4] = 5
+                elif (red2, green2, blue2) == (0, 128, 128):
+                    b[inc3][inc4] = 6
+                elif (red3, green3, blue3) == (192, 192, 192):
+                    b[inc3][inc4] = -2
+    pass
 
 
 # проверка на бессмысленость
@@ -87,6 +86,7 @@ while keyboard.is_pressed('q') == False:
     parsefect = [[[[-1 for c1 in range(3)] for m1 in range(3)] for c in range(30)] for m in range(16)]
     parsefectplus = [[0 for c in range(30)] for m in range(16)]
     parsefectpp = [[0 for c in range(30)] for m in range(16)]
+    polever = [[0 for c in range(30)] for m in range(16)]
     i = random.randint(0, 15)
     click(x=a[i][i][0] + 9, y=a[i][i][1] + 9)
     click(x=a[i][i][0] + 9, y=a[i][i][1] + 9)
@@ -134,7 +134,7 @@ while keyboard.is_pressed('q') == False:
                                                 rclick(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                        y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                                 p = True
-                                xyi()
+                                                b[inc1 + v - 1][inc2 + c - 1] = -1
                                 for v in range(3):
                                     for c in range(3):
                                         if -1 < inc1 + v - 1 < 16 and -1 < inc2 + c - 1 < 30:
@@ -183,7 +183,7 @@ while keyboard.is_pressed('q') == False:
                                                 rclick(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                        y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                                 p = True
-                                xyi()
+                                                b[inc1 + v - 1][inc2 + c - 1] = -1
                                 for v in range(3):
                                     for c in range(3):
                                         if -1 < inc1 + v - 1 < 16 and -1 < inc2 + c - 1 < 30:
@@ -232,7 +232,7 @@ while keyboard.is_pressed('q') == False:
                                                 rclick(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                        y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                                 p = True
-                                xyi()
+                                                b[inc1 + v - 1][inc2 + c - 1] = -1
                                 for v in range(3):
                                     for c in range(3):
                                         if -1 < inc1 + v - 1 < 16 and -1 < inc2 + c - 1 < 30:
@@ -281,7 +281,7 @@ while keyboard.is_pressed('q') == False:
                                                 rclick(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                        y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                                 p = True
-                                xyi()
+                                                b[inc1 + v - 1][inc2 + c - 1] = -1
                                 for v in range(3):
                                     for c in range(3):
                                         if -1 < inc1 + v - 1 < 16 and -1 < inc2 + c - 1 < 30:
@@ -330,7 +330,7 @@ while keyboard.is_pressed('q') == False:
                                                 rclick(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                        y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                                 p = True
-                                xyi()
+                                                b[inc1 + v - 1][inc2 + c - 1] = -1
                                 for v in range(3):
                                     for c in range(3):
                                         if -1 < inc1 + v - 1 < 16 and -1 < inc2 + c - 1 < 30:
@@ -379,7 +379,7 @@ while keyboard.is_pressed('q') == False:
                                                 rclick(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                        y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                                 p = True
-                                xyi()
+                                                b[inc1 + v - 1][inc2 + c - 1] = -1
                                 for v in range(3):
                                     for c in range(3):
                                         if -1 < inc1 + v - 1 < 16 and -1 < inc2 + c - 1 < 30:
@@ -440,7 +440,7 @@ while keyboard.is_pressed('q') == False:
                                                                                     if b[inc1-3+inc9][inc2-3+inc10] == 0:
                                                                                         rclick(a[inc1-3+inc9][inc2-3+inc10][0]+9, a[inc1-3+inc9][inc2-3+inc10][1]+9)
                                                                                         p = True
-                                                                                        xyi()
+                                                                                        b[inc1-3+inc9][inc2-3+inc10] = -1
                                                                 if b[inc1][inc2] - parsefectpp[inc1][inc2] == b[inc1 + v - 2][inc2 + c - 2] - parsefectpp[inc1 + v - 2][inc2 + c - 2]:
                                                                     for inc9 in range(7):
                                                                         for inc10 in range(7):
@@ -459,7 +459,7 @@ while keyboard.is_pressed('q') == False:
                                                                                     if b[inc1-3+inc9][inc2-3+inc10] == 0:
                                                                                         rclick(a[inc1-3+inc9][inc2-3+inc10][0]+9, a[inc1-3+inc9][inc2-3+inc10][1]+9)
                                                                                         p = True
-                                                                                        xyi()
+                                                                                        b[inc1-3+inc9][inc2-3+inc10] = -1
                                                                 if b[inc1 + v - 2][inc2 + c - 2] - parsefectpp[inc1 + v - 2][inc2 + c - 2] == b[inc1][inc2] - parsefectpp[inc1][inc2]:
                                                                     for inc9 in range(7):
                                                                         for inc10 in range(7):
@@ -475,8 +475,6 @@ while keyboard.is_pressed('q') == False:
                 i = random.randint(0, 15)
                 k = random.randint(0, 29)
                 if b[i][k] == 0:
-                    while keyboard.is_pressed('w'):
-                        time.sleep(0.5)
                     click(x=a[i][k][0] + 9, y=a[i][k][1] + 9)
                     xyi()
                     break
