@@ -18,7 +18,7 @@ def rclick(x, y):  # кликает правой кнопкой мыши
     win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP, 0, 0)
 
 
-def xyi():  # парсит
+def Pars():  # парсит
     pic = pyautogui.screenshot(region=(a[0][0][0], a[0][0][1], 144, 144))
     for inc3 in range(9):
         for inc4 in range(9):
@@ -53,7 +53,7 @@ while keyboard.is_pressed('q') == False:
     click(x=a[i][i][0] + 9, y=a[i][i][1] + 9)
     click(x=a[i][i][0] + 9, y=a[i][i][1] + 9)
     time.sleep(0.1)
-    xyi()
+    Pars()
     timee = time.time()
     while r:
         p = False
@@ -76,7 +76,7 @@ while keyboard.is_pressed('q') == False:
                                         click(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                               y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                         p = True
-                        xyi()
+                        Pars()
                     else:
                         for v in range(3):
                             for c in range(3):
@@ -95,7 +95,7 @@ while keyboard.is_pressed('q') == False:
                                             rclick(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                    y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                             p = True
-                            xyi()
+                            Pars()
                             for v in range(3):
                                 for c in range(3):
                                     if -1 < inc1 + v - 1 < 9 and -1 < inc2 + c - 1 < 9:
@@ -103,7 +103,7 @@ while keyboard.is_pressed('q') == False:
                                             click(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                   y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                             p = True
-                            xyi()
+                            Pars()
                 q = False
                 z = 0
                 if b[inc1][inc2] == 2:  # блок на 2
@@ -124,7 +124,7 @@ while keyboard.is_pressed('q') == False:
                                         click(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                               y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                         p = True
-                        xyi()
+                        Pars()
                     else:
                         for v in range(3):
                             for c in range(3):
@@ -143,7 +143,7 @@ while keyboard.is_pressed('q') == False:
                                             rclick(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                    y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                             p = True
-                            xyi()
+                            Pars()
                             for v in range(3):
                                 for c in range(3):
                                     if -1 < inc1 + v - 1 < 9 and -1 < inc2 + c - 1 < 9:
@@ -151,7 +151,7 @@ while keyboard.is_pressed('q') == False:
                                             click(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                   y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                             p = True
-                            xyi()
+                            Pars()
                 q = False
                 z = 0
                 if b[inc1][inc2] == 3:  # блок на 3
@@ -172,7 +172,7 @@ while keyboard.is_pressed('q') == False:
                                         click(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                               y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                         p = True
-                        xyi()
+                        Pars()
                     else:
                         for v in range(3):
                             for c in range(3):
@@ -191,7 +191,7 @@ while keyboard.is_pressed('q') == False:
                                             rclick(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                    y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                             p = True
-                            xyi()
+                            Pars()
                             for v in range(3):
                                 for c in range(3):
                                     if -1 < inc1 + v - 1 < 9 and -1 < inc2 + c - 1 < 9:
@@ -199,7 +199,7 @@ while keyboard.is_pressed('q') == False:
                                             click(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                   y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                             p = True
-                            xyi()
+                            Pars()
                 q = False
                 z = 0
                 if b[inc1][inc2] == 4:  # блок на 4
@@ -220,7 +220,7 @@ while keyboard.is_pressed('q') == False:
                                         click(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                               y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                         p = True
-                        xyi()
+                        Pars()
                     else:
                         for v in range(3):
                             for c in range(3):
@@ -239,7 +239,7 @@ while keyboard.is_pressed('q') == False:
                                             rclick(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                    y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                             p = True
-                            xyi()
+                            Pars()
                             for v in range(3):
                                 for c in range(3):
                                     if -1 < inc1 + v - 1 < 9 and -1 < inc2 + c - 1 < 9:
@@ -247,7 +247,7 @@ while keyboard.is_pressed('q') == False:
                                             click(x=a[inc1 + v - 1][inc2 + c - 1][0] + 9,
                                                   y=a[inc1 + v - 1][inc2 + c - 1][1] + 9)
                                             p = True
-                            xyi()
+                            Pars()
         if not p:  # блок случайных нажатий
             while True:
                 i = random.randint(0, 8)
@@ -255,7 +255,7 @@ while keyboard.is_pressed('q') == False:
                 if b[i][k] == 0:
                     click(x=a[i][k][0] + 9, y=a[i][k][1] + 9)
                     time.sleep(0.1)
-                    xyi()
+                    Pars()
                     break
         r = not pyautogui.pixelMatchesColor(pos_face[0] + 9, pos_face[1] + 17, (0, 0, 0)) and not pyautogui.pixelMatchesColor(pos_face[0] + 7, pos_face[1] + 12, (0, 0, 0))
     if pyautogui.pixelMatchesColor(pos_face[0] + 7, pos_face[1] + 12, (0, 0, 0)):
